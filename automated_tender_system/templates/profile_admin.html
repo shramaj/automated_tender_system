@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Automated Tender System</title>
+
+    <!-- Start WOWSlider.com HEAD section --> <!-- add to the <head> of your page -->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    --><script type="text/javascript" src="../static/js/jquery.js"></script>
+    <!-- End WOWSlider.com HEAD section -->
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/profile_style.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css" />
+
+    <script type="text/javascript" src="../static/js/jquery.js"></script>
+    <script type="text/javascript" src="../static/js/profile_admin.js"></script>
+    <!--<link rel="stylesheet" type="text/css" href="../static/css/addusers.css" />-->
+    <script type="text/javascript" src="../static/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!--<script type="text/javascript" src="../static/js/addusers.js"></script>
+-->
+
+
+
+</head>
+<body>
+<div class="navbar">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid" style="background-color: steelblue;">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Automated Tenders System</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="#div1">Home <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">Active Tenders</a></li>
+                    <li><a href="#">Search</a></li>
+                    <li><a href="#">Active Corrigendums</a></li>
+                    <li><a href="#">Result of Tenders</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+</div>
+
+<section id="ver-nav">
+    <div class="container" id="profile">
+        <div class="row" style="margin-top: 10%; margin-bottom: 10%;">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                <ul class="nav nav-pills nav-stacked">
+                    <li role="presentation"><a href="about.html">Add Users</a></li>
+                    <li role="presentation"><a href="predept.html">View Users</a></li>
+                    <li role="presentation"><a href="fees.html">Update User Info.</a></li>
+                    <li role="presentation"><a href="contact.html">Delete Users</a></li>
+                    <li role="presentation" class="active"><a href="faq.html">Profile Settings</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9" style="margin-top: -06%;">
+                <div class="row">
+                    <h3 style="text-align: center;">Profile Settings</h3>
+                    <hr>
+                </div>
+                <div class="row" style="padding: 10%; background-color: lightgrey;" >
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="font-size: 1.2em;">
+                            <p><b>Login ID:</b></p>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="color: white; font-size:1.2em;">
+                            <p>{{ login['loginid'] }}</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="font-size: 1.2em;">
+                            <p><b>Name:</b></p>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="color: white; font-size:1.2em;">
+                            <p>{{ login['Name'] }}</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="font-size: 1.2em;">
+                            <p><b>Email ID</b></p>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="color: white; font-size:1.2em;">
+                            <p>{{ login['email'] }}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="font-size: 1.2em;">
+                            <p><b>Phone Number</b></p>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="color: white; font-size:1.2em;">
+                            <p>{{ login['ph_no'] }}</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <button class="btn btn-primary" value="edit" id="edit">Edit</button>
+                        </div>
+                    </div>
+                    <!--maanavs code-->
+                </div>
+            </div>
+            <!--{#            <div style="display:none;" id="updation" name="updation">#}
+{#                    <form >#}
+{#                        <div class="form-group">#}
+{#                            <label>Name of Nodal officer: </label><input type="text" class="form-control" name="name" />#}
+{#                        </div>#}
+{#                    </form>#}
+{##}
+{#            </div>#}
+--
+                    <!--maanavs code-->
+
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+    <div class="container" id="updation" style="display: none;">
+        <div class="row" style="margin-top: 10%; margin-bottom: 10%;">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                <ul class="nav nav-pills nav-stacked">
+                    <li role="presentation"><a href="about.html">Add Users</a></li>
+                    <li role="presentation"><a href="predept.html">View Users</a></li>
+                    <li role="presentation"><a href="fees.html">Update User Info.</a></li>
+                    <li role="presentation"><a href="contact.html">Delete Users</a></li>
+                    <li role="presentation" class="active"><a href="faq.html">Profile Settings</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9" style="margin-top: -06%;">
+                <div class="row">
+                    <h3 style="text-align: center;">Admin Settings</h3>
+                    <hr>
+                </div>
+
+                <div class="row" style="padding: 10%; background-color: lightgrey;" >
+                    <form name="profile_update" method="POST">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="font-size: 1.2em;">
+                                <p><b>Login ID:</b></p>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="color: black; font-size:1.2em;">
+                                <p>{{ login['loginid'] }}</p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="font-size: 1.2em;">
+                                <p><b>Name:</b></p>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="color: black; font-size:1.2em;">
+                                <input type="text" name="Name" value="{{ login['Name'] }}" >
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="font-size: 1.2em;">
+                                <p><b>Email ID</b></p>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="color: black; font-size:1.2em;">
+                                <input type="email" name="email" value="{{ login['email'] }}" >
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="font-size: 1.2em;">
+                                <p><b>Phone Number</b></p>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="color: black; font-size:1.2em;">
+                                <input type="tel" name="ph_no" value="{{ login['ph_no'] }}" >
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button class="btn btn-primary" value="save" id="save">save</button>
+                            </div>
+                        </div>
+                    </form>
+                    <!--maanavs code-->
+                </div>
+            </div>
+            <!--{#            <div style="display:none;" id="updation" name="updation">#}
+{#                    <form >#}
+{#                        <div class="form-group">#}
+{#                            <label>Name of Nodal officer: </label><input type="text" class="form-control" name="name" />#}
+{#                        </div>#}
+{#                    </form>#}
+{##}
+{#            </div>#}
+--
+                    <!--maanavs code-->
+
+
+        </div>
+
+    </div>
+</section>
+
+<footer style="background-color: black; text-align: ">
+    <div class="container">
+        <div class="row">
+
+            <ul class="list-inline " style="text-align: center;">
+                <li id="social" class="push-right">Keep in touch</li>
+                <li><a  href="#"><img src="../static/img/facebook.png"></a></li>
+                <li><a href="#"><img src="../static/img/Youtube.png"></a></li>
+                <li><a href="#"><img src="../static/img/Twitter.png"></a></li>
+            </ul>
+
+        </div>
+        <div class="row" style="text-align: center; text-decoration: none;">
+            <a  href="#">Website Policy </a> |
+            <a  href="#">RTI </a> |
+            <a  href="#"> Sitemap</a>
+        </div>
+        <div class="row" style="text-align: center;">
+            <div>
+                <p>
+                    &copy; Automated Tenders System 2017. All right reserved.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<script type="text/javascript" src="engine1/wowslider.js"></script>
+<script type="text/javascript" src="engine1/script.js"></script>
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Plugin JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+
+
+<!-- Theme JavaScript -->
+<script src="js/scroll.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,203 @@
+{% extends "layout.html" %}
+{% block head %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../static/css/register_style.css">
+{% endblock %}
+{% block body %}
+<div id="grad1">
+     
+    <!-- Description-->
+    <div class="container-fluid div1" style="padding-top: 40px;">
+    <div class="row">
+    <div class="col-md-2 col-lg-2" style="background-color:rgb();">
+         </div>
+
+<div class = "container">
+    <div class = "row">
+        <div class = "col-sm-9">
+          <div class="color" style="background-color: white; width:100%;">
+            <form method=POST action="{{url_for('register')}}" name= "form_reg" ng-submit = "saveUser(userInfo)" >
+                <div>
+                    <fieldset>
+                        <legend>Enrollment Details</legend>
+                        <div class="form-group" ng-controller = "userCtrl">
+
+                            <label>Login Id</label>
+                            <input type="email" class="form-control" name="l_ID" ng-model = "userInfo.l_ID" ng-required = "true" />
+                            <span class="error-message" ng-show="form_reg.l_ID.$touched && form_reg.l_ID.$error.required">Enter a valid login id(email)</span>
+                        </div>
+                        <div class="form-group" ng-controller = "userCtrl">
+
+                            <label>Password</label>
+                            <input type="password" class="form-control" name="pwd"  id="pwd" ng-model = "userInfo.pwd" ng-required = "true" ng-pattern="/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/" />
+                            <!--<div ng-messages= "form_reg.pwd.$error" style="color: maroon" role="alert"></div>-->
+                            <span class="error-message" ng-show="form_reg.pwd.$pristine && form_reg.pwd.$untouched">Atleast 8 characters 1 special symbol 1 nuber and upperand lower case</span>
+                            <span class="error-message" ng-show="form_reg.pwd.$touched">Atleast 8 characters 1 special symbol 1 nuber and upperand lower case</span>
+
+                        </div>
+
+                        <div class="form-group" ng-controller = "userCtrl">
+
+                            <label>Confirm Password</label>
+                            <input type="password"  class="form-control" name="cpwd" id="cpwd" ng-model = "userInfo.cpwd" ng-required = "true" pw-check="pwd" />
+                            <!--<span class="error-message" ng-show="form_reg.cpwd.$touched && form_reg.cpwd.$error.required">This doesnt match with the above password</span>
+                            --><span class="error-message" ng-show="form_reg.pwd.$error.required" id="nmpwd"></span>
+                        </div>
+
+
+
+
+                    </fieldset>
+                </div>
+                <fieldset>
+                    <legend>Company Details</legend>
+
+                    <div class="form-group" ng-controller = "userCtrl">
+
+                        <label>Company Name</label>
+                        <input type="text" class="form-control" name="cName" ng-model = "userInfo.cName" ng-required = "true" ng-pattern="alpOnlyRegex"/>
+                        <span class="error-message" ng-show="form_reg.cName.$touched && form_reg.cName.$error.required">Enter the company name</span>
+<span class="error-message" ng-show="form_reg.cName.$error.pattern">Only alphabets allowed</span>
+                    </div>
+
+                    <div class="form-group" ng-controller = "userCtrl">
+
+                        <label>Registration Number</label>
+                        <input type="text" class="form-control" name="cRnum" ng-model = "userInfo.cRnum" ng-required = "true" ng-pattern="numOnlyRegex" />
+                        <span class="error-message" ng-show="form_reg.cRnum.$touched && form_reg.cRnum.$error.required">Must Enter a First Name</span>
+                        <span class="error-message" ng-show="form_reg.cRnum.$error.pattern">Only numbers allowed</span>
+
+                    </div>
+
+                    <div class="form-group" ng-controller = "userCtrl">
+
+                        <label>Registered Address</label><!--error not displaying-->
+                        <textarea class="form-control" name="cAddr" ng-model = "userInfo.cAddr" ng-required = "true" ></textarea>
+                        <span class="error-message" ng-show="form_reg.cAddr.$touched && form_reg.cAddr.$error.required">Enter registered address</span>
+                    </div>
+
+                    <div class="form-group" ng-controller = "userCtrl">
+
+                        <label>Name of partners/directors</label>
+                        <textarea class="form-control" name="nPart" ng-model = "userInfo.nPart" ng-required = "true"></textarea>
+                        <span class="error-message" ng-show="form_reg.nPart.$touched && form_reg.nPart.$error.required">Enter name of partners</span>
+
+                    </div>
+<br><br>
+                    <div class="form-group" ng-controller = "userCtrl">
+
+                        <label>City</label>
+                        <input type="text" class="form-control" name="city" ng-model = "userInfo.city" ng-required = "true" ng-pattern="alpOnlyRegex" ng-minlength="2" />
+                        <span class="error-message" ng-show="form_reg.city.$touched && form_reg.city.$error.required">Enter city name</span>
+<span class="error-message" ng-show="form_reg.city.$error.pattern">Only alphabets allowed</span>
+                    </div>
+
+                    <div class="form-group" ng-controller = "userCtrl">
+
+                        <label>State</label>
+                        <select class = "form-control" name = "state" ng-model = "userInfo.state" ng-required = "true">
+                            <option>Maharashtra</option>
+                            <option>UP</option>
+                            <option>Rajasthan</option>
+                        </select>
+                        <span class="error-message" ng-show="form_reg.l_ID.$touched && form_reg.l_ID.$error.required">Select a valid option</span>
+
+                    </div>
+
+                    <div class="form-group" ng-controller = "userCtrl">
+
+                        <label>Postal Code</label>
+                        <input type="text" class="form-control" name="pCode" ng-model = "userInfo.pCode" ng-required = "true" ng-pattern="numOnlyRegex" ng-minlength="6" ng-maxlength="6" />
+                        <span class="error-message" ng-show="form_reg.pCode.$touched && form_reg.pCode.$error.required">Enter the 6-digit postal code</span>
+                        <span class="error-message" ng-show="form_reg.pCode.$error.pattern">Only numbers allowed</span>
+                    </div>
+
+                    <div class="form-group" ng-controller = "userCtrl">
+
+                        <label>PAN/TAN Number</label><!--need to edit-->
+                        <input type="text" class="form-control" name="pan" ng-model = "userInfo.pan" ng-required = "true" ng-minlength="10" ng-maxlength="10s" />
+                        <span class="error-message" ng-show="form_reg.pan.$touched && form_reg.pan.$error.required">Enter  valid PAN number</span>
+                    </div>
+
+                    <div class="form-group" ng-controller = "userCtrl">
+
+                        <label>Establishment year</label>
+                        <input type="text" class="form-control" name="eYear" ng-model = "userInfo.nob" ng-required = "true" ng-minlength="4" ng-maxlength="4" ng-pattern="numOnlyRegex"/>
+
+                    </div>
+
+
+                    <div class="form-group" ng-controller = "userCtrl">
+
+                        <label>Nature of Buisness</label>
+                        <input type="text" class="form-control" name="nob" ng-model = "userInfo.nob" ng-required = "true" />
+                        <span class="error-message" ng-show="form_reg.nob.$touched && form_reg.nob.$error.required">Enter the nature of buisness</span>
+
+                    </div>
+
+                    <div class="form-group" ng-controller = "userCtrl">
+
+                        <label>Legal Status</label>
+                        <select class = "form-control" name = "lStat" ng-model = "userInfo.lStat" ng-required = "true">
+                            <option>Limited Company</option>
+                            <option>Undertaking</option>
+                            <option>Jointventure</option>
+                            <option>Partnership</option>
+                            <option>Others</option>
+                        </select>
+                        <span class="error-message" ng-show="form_reg.lStat.$touched && form_reg.lStat.$error.required">select valid legal status</span>
+
+                    </div>
+
+                    <div class="form-group" ng-controller = "userCtrl">
+
+              </fieldset>
+
+                <fieldset>
+                    <legend>Contact Details</legend>
+
+
+                    <div class="form-group" ng-controller = "userCtrl">
+
+                        <label>Correspondance email</label><!--Should be same as login-->
+                        <input type="email" class="form-control" name="cMail" ng-model = "userInfo.cMail" ng-required = "true" />
+                        <span class="error-message" ng-show="form_reg.cMail.$touched && form_reg.cMail.$error.required">Enter valid email id</span>
+
+                    </div>
+                  <div class="form-group" ng-controller = "userCtrl">
+
+                        <label>Phone Number</label><!--Checkout-->
+                        <input type="tel" class="form-control" name="pNum" ng-model = "userInfo.pNum" ng-required = "true" ng-pattern="numOnlyRegex" ng-minlength="11" ng-maxlength="11" />
+                        <span class="error-message" ng-show="form_reg.pNum.$touched && form_reg.pNum.$error.required">Enter a valid phone number</span>
+<span class="error-message" ng-show="form_reg.pNum.$error.pattern">E.G. 02221716666</span>
+                    </div>
+
+
+                    <div class="form-group" ng-controller = "userCtrl">
+
+                        <label>Mobile Number</label>
+                        <input type="tel" class="form-control" name="mNum" ng-model = "userInfo.mNum" ng-required = "true" ng-pattern="numOnlyRegex" ng-minlength="11" ng-maxlength="11" />
+                        <span class="error-message" ng-show="form_reg.mNum.$touched && form_reg.mNum.$error.required">Must Enter a First Name</span>
+<span class="error-message" ng-show="form_reg.mNum.$error.pattern">E.g. 09876543210</span>
+                    </div>
+                </fieldset>
+
+                </fieldset><br>
+                <center><button type="submit" class="btn btn-primary" value="Save" ng-disabled="form_reg.$invalid">Save</button></center>
+
+            </form>
+        </div>
+        </div>  
+    </div>
+</div>
+</fieldset>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+ {% endblock %}

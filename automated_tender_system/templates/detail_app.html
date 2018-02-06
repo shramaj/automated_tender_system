@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+{% block head %}
+  <link rel="stylesheet" type="text/css" href="../static/css/tender_page.css" />
+
+
+{% endblock %}
+{% block body %}
+    <section>
+        <div class="container-fluid" style="background-color: #f0f0f0; margin-top: -2%; margin-bottom: 14%;">
+            <div class="row" style="background-color:white; margin-top:5%;margin-bottom: 5%;margin-left: 15%;margin-right: 15%;padding: 2%;">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12" style="text-align: center;">
+                        <h3>Application Details</h3>
+                        <hr>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 col-md-3">
+                        <b>Tender ID:</b>
+                    </div>
+                    <div class="col-md-3 col-md-3">
+                        {{ details._id }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <b>Customer Name:</b>
+                    </div>
+                    <div class="col-md-9">
+                        {{ details.cName }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <b>Customer Registration ID:</b>
+                    </div>
+                    <div class="col-md-9">
+                        {{ customer_details.cRnum }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <b>Application Date:</b>
+                    </div>
+                    <div class="col-md-9">
+                        {{ details.time }}
+                    </div>
+                </div>
+                <div class="row" style="padding-top: 2%;">
+                    <div class="col-md-3">
+                    </div>
+
+                <form method="POST">
+                <select type="dropdown" name="state">
+                <option value="technical">Technical</option>
+                <option value="technical_and_commercial">Technical+Commercial</option>                
+                <option value="rejected">Rejected</option>
+                <option value="blacklisted">Blacklisted</option>
+                </select>
+
+                    <div class="col-md-6" style="text-align: center;">
+                        <button class="btn btn-success" role="button" type="Submit">Submit</button>
+                    </div>
+
+                </form>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+{% endblock %}

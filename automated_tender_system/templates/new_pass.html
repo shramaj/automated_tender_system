@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Automated Tender System</title>
+    
+    
+    <link rel="stylesheet" type="text/css" href="engine1/style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script type="text/javascript" src="engine1/jquery.js"></script>
+    
+<style>
+.navbar{
+    margin-bottom: 0px;
+    border: 0;
+}
+
+.navbar-default .navbar-brand {
+    color: white;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+    color: white;
+    background-color: black;
+}
+.navbar-default .navbar-nav>li>a {
+    color: white;
+}
+.help{
+    text-align: center;
+}
+     [ng\:cloak], [ng-cloak], .ng-cloak {
+            display: none;
+        }
+        table{
+            width: 400px;
+            text-align: left;
+            border: 2px solid black;
+            padding: 10px;
+        }
+        input.ng-dirty.ng-invalid{
+            border-color: red;
+        }
+        input.ng-touched.ng-invalid{
+            border-color: red;
+        }
+form 
+{
+   
+  padding-left:30px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-top: 15px;
+  width: 100%;
+
+
+}
+label
+{
+     
+    float: left;
+    width: 200px;
+     
+}
+select,input,textarea
+{
+    max-width: 400px;
+}
+ .btn
+ {
+    min-width:150px;
+    min-height:4px
+ }
+ body
+ {
+     
+    background: #f0f0f0; 
+       background-repeat: no-repeat;
+}
+
+ }
+</style>
+<script>
+ function Validate() {
+        var password = document.getElementById("pwd").value;
+        var confirmPassword = document.getElementById("cpwd").value;
+        if (password != confirmPassword) {
+            alert("Passwords do not match.");
+            return false;
+        }
+        return true;
+    }
+</script>
+</head>
+<body data-spy="scroll" data-target=".navbar">
+    
+    <div class="navbar">
+<nav class="navbar navbar-default">
+  <div class="container-fluid" style="background-color: steelblue;">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Automated Tenders System</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+              
+      </ul>
+      
+        <ul class="nav navbar-nav navbar-right">
+        <li class="active"><a href="#div1">Home <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Active Tenders</a></li>
+        <li><a href="#">Search</a></li>
+        <li><a href="#">Active Corrigendums</a></li>
+        <li><a href="#">Result of Tenders</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+</div>
+<div id="grad1">
+     
+    <!-- Description-->
+    <div class="container-fluid div1" style="padding-top: 40px;">
+    <div class="row">
+    <div class="col-md-3 col-lg-3" style="background-color:rgb();">
+         </div>
+        
+    <div class="col-md-6">
+ <div class = "container">
+    <div class = "row">
+        <div class = "col-sm-7">
+        <div class="color" style="background-color: white;">
+            <form name= "form_reg" ng-submit = "saveUser(userInfo)" method="post">
+                <div>
+                    <fieldset>
+                        <legend>New Password</legend>
+                        <div class="form-group" ng-controller = "userCtrl">
+
+                            <label>Password</label>
+ <input type="password" class="form-control" name="pwd"  id="pwd" ng-model = "userInfo.pwd" ng-required = "true" ng-pattern="/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/" />
+                            <!--<div ng-messages= "form_reg.pwd.$error" style="color: maroon" role="alert"></div>-->
+                            <span class="error-message" ng-show="form_reg.pwd.$pristine && form_reg.pwd.$untouched">Atleast 8 characters 1 special symbol 1 number and upper and lower case</span>
+                            
+ 			    <label>Confirm Password</label>
+<input type="password"  class="form-control" name="cpwd" id="cpwd" ng-model = "userInfo.cpwd" ng-required = "true" pw-check="pwd" />
+                            <!--<span class="error-message" ng-show="form_reg.cpwd.$touched && form_reg.cpwd.$error.required">This doesnt match with the above password</span>
+                            --><span class="error-message" ng-show="form_reg.pwd.$error.required" id="nmpwd"></span>
+                            
+
+                        </div>
+      <center> <button href="{{url_for('login')}}" class="btn btn-success" role="button" value="Submit" type="Submit" onclick="return Validate()">Submit</button> </center> <br>
+
+                         
+ 
+
+ 
+                     
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+<script src="login.js"></script>
+    </div>
+        
+ 
+        
+    </div>
+    </div>      
+
+    <script type="text/javascript" src="engine1/wowslider.js"></script>
+    <script type="text/javascript" src="engine1/script.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- End WOWSlider.com BODY section -->
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

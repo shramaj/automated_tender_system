@@ -1,0 +1,145 @@
+{% extends "layout.html" %}
+{% block head %}
+  <link rel="stylesheet" type="text/css" href="../static/css/tender_page.css" />
+
+
+{% endblock %}
+{% block body %}
+    <section>
+        <div class="container-fluid" style="background-color: #f0f0f0; margin-top: -2%; padding-bottom: 4%;">
+            <div class="row"style="background-color:white; margin-top:5%;margin-bottom: 5%;margin-left: 15%;margin-right: 15%;padding: 2%;">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12" style="text-align: center;">
+                        <h3>Tender Details</h3>
+                        <hr>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 col-md-3">
+                        <b>Tender ID:</b>
+                    </div>
+                    <div class="col-md-3 col-md-3">
+                        {{ tender_details.id }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <b>Tender Title:</b>
+                    </div>
+                    <div class="col-md-9">
+                        {{ tender_details.title }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <b>Issuing Department:</b>
+                    </div>
+                    <div class="col-md-9">
+                        {{ tender_details.org_chain }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <b>Tender Description:</b>
+                    </div>
+                    <div class="col-md-9">
+                        {{ tender_details.description }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <b>Publising Date:</b>
+                    </div>
+                    <div class="col-md-9">
+                        {{ tender_details.epub_date }}
+                    </div>
+                </div>
+                    
+                    <div class="row">
+                    <div class="col-md-3">
+                        <b>Opening Date:</b>
+                    </div>
+                    <div class="col-md-3">
+                        {{ tender_details.opening_date }}
+                    </div>
+                    <div class="col-md-3">
+                        <b>Closing Date:</b>
+                    </div>
+                    <div class="col-md-3">
+                        {{ tender_details.closing_date }}
+                    </div>
+                    </div>
+
+                    <div class="row">
+                    <div class="col-md-3">
+                        <t><b>Criteria1:</b>
+                    </div>
+                    <div class="col-md-3">
+                        {{ tender_details.criteria.criteria1 }}
+                    </div>
+                    <div class="col-md-3">
+                        <b>Criteria2:</b>
+                    </div>
+                    <div class="col-md-3">
+                        {{ tender_details.criteria.criteria2 }}
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-md-3">
+                        <b>Criteria3:</b>
+                    </div>
+                    <div class="col-md-3">
+                        {{ tender_details.criteria.criteria3 }}
+                    </div>
+                    <div class="col-md-3">
+                        <b>Criteria4:</b>
+                    </div>
+                    <div class="col-md-3">
+                        {{ tender_details.criteria.criteria4 }}
+                    </div>
+                    </div>
+                </div>
+                <div class="row" style="padding-top: 2%;">
+                    <div class="col-md-3">
+                    </div>
+
+                    <form method="POST">
+                    <div class="col-md-6" style="text-align: center;">
+                        <button class="btn btn-success" role="button" type="Submit">Apply Now</button>
+                    </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+<!-- 
+    {#<form action="{{url_for('tender_page',token=token)}}" method="POST">#}
+    {# Comment: <input type="text" name="comment_box"><br>#}
+    {#  <input type="submit" value="Submit">#}
+    {#</form>#}
+    {#  <h2>Messages</h2>#}
+    {#  {% if final_comments %}#}
+    {#    <ul>#}
+    {#      {% for comment in final_comments %}#}
+    {#        <li>#}
+    {#          <h5>{{ final_comments[comment].who }}</h5>#}
+    {#          <p>{{ final_comments[comment].body }}</p>#}
+    {#        </li>#}
+    {#      {% endfor %}#}
+    {#    </ul>#}
+    {#  {% else %}#}
+    {#    No messages!#}
+    {#  {% endif %}#}
+    {#<h2>Messages</h2>#}
+    {#{%for comment in final_comments %}#}
+    {#    <ul>#}
+    {#    <li>#}
+    {#{{ comment.who }} : {{ comment.body }}#}
+    {#    </li>#}
+    {#</ul>#}
+    {#{% endfor %}#}
+ -->
+{% endblock %}

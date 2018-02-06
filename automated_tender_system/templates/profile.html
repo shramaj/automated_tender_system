@@ -1,0 +1,393 @@
+{% extends "layout.html" %}
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="../static/css/profile_style.css" />
+    <script type="text/javascript" src="../static/js/profile.js"></script>
+    <!--<link rel="stylesheet" type="text/css" href="../static/css/addusers.css" />-->
+    <script type="text/javascript" src="../static/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!--<script type="text/javascript" src="../static/js/addusers.js"></script>
+-->
+
+{% endblock %}
+{% block body %}
+
+<section id="ver-nav">
+    <div class="container" id="profile">
+        <div class="row" style="margin-top: 10%; margin-bottom: 10%;">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                <ul class="nav nav-pills nav-stacked">
+                    <li role="presentation"><a href="{{url_for('search')}}">Search Tenders</a></li>
+                    <li role="presentation"><a href="contact.html">Tender Archives</a></li>
+                    <li role="presentation"><a href="{{url_for('feedback')}}">Feedback</a></li>
+                    <li role="presentation" class="active"><a href="{{url_for('profile')}}">Profile Settings</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9" style="margin-top: -06%;">
+                <div class="row">
+                    <h3 style="text-align: center;">Profile Settings</h3>
+                    <hr>
+                </div>
+                <div class="row" style="padding: 10%; background-color: lightgrey;" >
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="font-size: 1.2em;">
+                            <p><b>Login ID:</b></p>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="color: white; font-size:1.2em;">
+                            <p>{{ login['loginid'] }}</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="font-size: 1.2em;">
+                            <p><b>Company Name:</b></p>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="color: white; font-size:1.2em;">
+                            <p>{{ login['cName'] }}</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="font-size: 1.2em;">
+                            <p><b>Registration Number:</b></p>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="color: white; font-size:1.2em;">
+                            <p>{{ login['cRnum'] }}</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="font-size: 1.2em;">
+                            <p><b>Name of partners/directors</b></p>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="color: white; font-size:1.2em;">
+                            <p>{{ login['nPart'] }}</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="font-size: 1.2em;">
+                            <p><b>City</b></p>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="color: white; font-size:1.2em;">
+                            <p>{{ login['city'] }}</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="font-size: 1.2em;">
+                            <p><b>State:</b></p>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="color: white; font-size:1.2em;">
+                            <p>{{ login['state'] }}</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="font-size: 1.2em;">
+                            <p><b>Postal Code</b></p>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="color: white; font-size:1.2em;">
+                            <p>{{ login['pCode'] }}</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="font-size: 1.2em;">
+                            <p><b>PAN/TAN Number</b></p>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="color: white; font-size:1.2em;">
+                            <p>{{ login['pan'] }}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="font-size: 1.2em;">
+                            <p><b>Establishment year</b></p>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="color: white; font-size:1.2em;">
+                            <p>{{ login['eYear'] }}</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="font-size: 1.2em;">
+                            <p><b>Nature of Buisness</b></p>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="color: white; font-size:1.2em;">
+                            <p>{{ login['nob'] }}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="font-size: 1.2em;">
+                            <p><b>Legal Status</b></p>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="color: white; font-size:1.2em;">
+                            <p>{{ login['lStat'] }}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="font-size: 1.2em;">
+                            <p><b>Correspondance email</b></p>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="color: white; font-size:1.2em;">
+                            <p>{{ login['cMail'] }}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="font-size: 1.2em;">
+                            <p><b>Phone Number</b></p>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="color: white; font-size:1.2em;">
+                            <p>{{ login['pNum'] }}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="font-size: 1.2em;">
+                            <p><b>Mobile Number</b></p>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="color: white; font-size:1.2em;">
+                            <p>{{ login['ph_no'] }}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <button class="btn btn-primary" value="edit", id="edit">Edit</button>
+                        </div>
+                    </div>
+
+                    <!--maanavs code-->
+
+
+                </div>
+            </div>
+            <!--{#            <div style="display:none;" id="updation" name="updation">#}
+{#                    <form >#}
+{#                        <div class="form-group">#}
+{#                            <label>Name of Nodal officer: </label><input type="text" class="form-control" name="name" />#}
+{#                        </div>#}
+{#                    </form>#}
+{##}
+{#            </div>#}
+--
+                    <!--maanavs code-->
+
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+    <div class="container" id="updation" style="display: none;">
+        <div class="row" style="margin-top: 10%; margin-bottom: 10%;">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                <ul class="nav nav-pills nav-stacked">
+                    <li role="presentation"><a href="{{url_for('search')}}">Search Tenders</a></li>
+                    <li role="presentation"><a href="contact.html">Tender Archives</a></li>
+                    <li role="presentation"><a href="{{url_for('feedback')}}">Feedback</a></li>
+                    <li role="presentation" class="active"><a href="{{url_for('profile')}}">Profile Settings</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9" style="margin-top: -06%;">
+                <div class="row">
+                    <h3 style="text-align: center;">Profile Settings</h3>
+                    <hr>
+                </div>
+                <form method="POST" name="form_update">
+                    <div class="row" style="padding: 10%; background-color: lightgrey;" >
+                        <div class="row">
+
+                            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="font-size: 1.2em;">
+                                <p><b>Login ID:</b></p>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="color: white; font-size:1.2em;">
+                                <input type="email" class="form-control" name="l_ID" value="{{ login['loginid'] }}" readonly/>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="font-size: 1.2em;">
+                                <p><b>Company Name:</b></p>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="color: white; font-size:1.2em;">
+                                <input type="text" class="form-control" name="cName" value=" {{ login['cName'] }} " readonly>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="font-size: 1.2em;">
+                                <p><b>Registration Number:</b></p>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="color: white; font-size:1.2em;">
+                                <input type="text" class="form-control" name="cRnum" value="{{ login['cRnum'] }}" readonly>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="font-size: 1.2em;">
+                                <p><b>Name of partners/directors</b></p>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="color: white; font-size:1.2em;">
+                                <textarea class="form-control" name="nPart" value="{{ login['nPart'] }}"></textarea>
+                                <span class="error-message" ng-show="form_update.nPart.$touched && form_update.nPart.$error.required">Enter name of partners</span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="font-size: 1.2em;">
+                                <p><b>City</b></p>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="color: white; font-size:1.2em;">
+                                <input type="text" class="form-control" name="city" value=" {{ login['city'] }}" >
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="font-size: 1.2em;">
+                                <p><b>State:</b></p>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="color: white; font-size:1.2em;">
+                                <select class="form-control" name="state">
+                                    <option value=" {{ login['state'] }} ">{{ login['state'] }}</option>
+                                    <option value="Maharashtra">Maharashtra</option>
+                                    <option value="UP">UP</option>
+                                    <option value="Rajasthan">Rajasthan</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="font-size: 1.2em;">
+                                <p><b>Postal Code</b></p>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="color: white; font-size:1.2em;">
+                                <input type="text" class="form-control" name="pCode" value=" {{ login['pCode'] }}" >
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="font-size: 1.2em;">
+                                <p><b>PAN/TAN Number</b></p>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="color: white; font-size:1.2em;">
+                                <input type="text" class="form-control" name="pan" value=" {{ login['pan'] }} ">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="font-size: 1.2em;">
+                                <p><b>Establishment year</b></p>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="color: white; font-size:1.2em;">
+                                <input type="text" class="form-control" name="eYear" value=" {{ login['eYear'] }} ">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="font-size: 1.2em;">
+                                <p><b>Nature of Buisness</b></p>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="color: white; font-size:1.2em;">
+                                <input type="text" class="form-control" name="nob" value=" {{ login['nob'] }} ">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="font-size: 1.2em;">
+                                <p><b>Legal Status</b></p>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="color: white; font-size:1.2em;">
+                                <select class="form-control" name="lStat">
+                                    <option value="{{ login['lStat'] }}">{{ login['lStat'] }}</option>
+                                    <option value="Limited Company">Limited Company</option>
+                                    <option value="Undertaking">Undertaking</option>
+                                    <option value="Jointventure">Jointventure</option>
+                                    <option value="Partnership">Partnership</option>
+                                    <option value="Others">Others</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="font-size: 1.2em;">
+                                <p><b>Correspondance email</b></p>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="color: white; font-size:1.2em;">
+                                <input type="email" class="form-control" name="cMail" value="{{ login['cMail'] }}">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="font-size: 1.2em;">
+                                <p><b>Phone Number</b></p>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="color: white; font-size:1.2em;">
+                                <input type="tel" class="form-control" name="pNum" value ="{{ login['pNum'] }}">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="font-size: 1.2em;">
+                                <p><b>Mobile Number</b></p>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="color: white; font-size:1.2em;">
+                                <input type="tel" class="form-control" name="mNum" value ="{{ login['ph_no'] }}">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="font-size: 1.2em;">
+                                <p><b>New Password</b></p>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="color: white; font-size:1.2em;">
+                                <input type="password" class="form-control" name="pwd" >
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="font-size: 1.2em;">
+                                <p><b>Confirm Password</b></p>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" style="color: white; font-size:1.2em;">
+                                <input type="password" class="form-control" name="cpwd">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button class="btn btn-primary" value="save" id="save">Save</button>
+                            </div>
+                        </div>
+                        <!--maanavs code-->
+
+
+                    </div>
+                </form>
+            </div>
+            <!--{#            <div style="display:none;" id="updation" name="updation">#}
+{#                    <form >#}
+{#                        <div class="form-group">#}
+{#                            <label>Name of Nodal officer: </label><input type="text" class="form-control" name="name" />#}
+{#                        </div>#}
+{#                    </form>#}
+{##}
+{#            </div>#}
+--
+                    <!--maanavs code-->
+
+
+        </div>
+
+    </div>
+</section>
+{%endblock%}
+
+<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+<!-- Bootstrap Core JavaScript -->
+<!-- Plugin JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+
+
+<!-- Theme JavaScript -->
+<script src="js/scroll.js"></script>
+
+</body>
+
+</html>

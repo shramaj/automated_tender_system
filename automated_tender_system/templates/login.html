@@ -1,0 +1,105 @@
+{% extends "layout.html" %}
+{% block head %}
+    
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script type="text/javascript" src="../static/js/jquery.js"></script>
+     <link rel="stylesheet" type="text/css" href="../static/css/login_style.css" />
+{% endblock %}
+{% block body %}
+<div id="grad1">
+     
+    <!-- Description-->
+    <div class="container-fluid div1" style="padding-top: 40px;">
+    <div class="row">
+    <div class="col-md-3 col-lg-3" style="background-color:rgb();">
+         </div>
+        
+    <div class="col-md-6">
+ <div class = "container">
+    <div class = "row">
+        <div class = "col-sm-7">
+        <div class="color" style="background-color: white;">
+            <form name= "form_reg" ng-submit = "saveUser(userInfo)" action={{url_for('login')}} method="POST">
+                <div>
+                    <fieldset>
+                        <legend>Login Details</legend>
+                        <div class="form-group" ng-controller = "userCtrl">
+
+                            <label>Username</label>
+                            <input type="text" class="form-control" name="l_ID" ng-model = "userInfo.l_ID" ng-required = "true" />
+                            <span class="error-message" ng-show="form_reg.l_ID.$touched && form_reg.l_ID.$error.required">Enter a valid login id(email)</span>
+                        </div>
+ 
+                        <div class="form-group" ng-controller = "userCtrl">
+
+                            <label>Password</label>
+                            <input type="password" class="form-control" name="pwd"  id="pwd" ng-model = "userInfo.pwd" ng-required = "true" ng-pattern="/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/" />
+                            <!--<div ng-messages= "form_reg.pwd.$error" style="color: maroon" role="alert"></div>-->
+                        </div>
+                          <center> <button class="btn btn-success" role="button" value="Submit" type="Submit">Submit</button> </center> <br>
+                         <center><a href="{{url_for('forgot_pass')}}">Forgot Password?</a></center>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+<script src="../static/js/login.js"></script>
+    </div>  
+    </div>
+    </div>      
+    </fieldset>
+    </div>
+    </form>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <br>
+    <br>
+        <br>
+    <br>
+        <br>
+    <br>
+        <br>
+    <br>
+        <br>
+    <br>
+    <script type="text/javascript" src="../static/js/wowslider.js"></script>
+    <script type="text/javascript" src="../static/js/script.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+ {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

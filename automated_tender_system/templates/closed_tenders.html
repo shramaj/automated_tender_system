@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+{% block head %}
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+    <!--<link rel="stylesheet" href="css/bootstrap-multiselect.css" type="text/css">-->
+    <link rel="stylesheet" href="../static/css/bootstrap-multiselect.css">
+    <script src="../static/js/bootstrap-multiselect.js"></script>
+    <!-- <script src="../static/js/search.js"></script> -->
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/css/jsquery.min.js"></script>
+    <script src="../static/css/bootstrap.min.css"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!--<script type="text/javascript" src="js/bootstrap-multiselect.js"></script>-->
+    <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
+
+
+    <link rel="stylesheet" type="text/css" href="../static/css/search_style.css" />
+
+{% endblock %}
+{% block body %}
+
+    <section>
+        <div class="container">
+
+            <div class="row" style="margin-left: 17%">
+
+
+                <div class="col-sm-9 col-md-9 col-xs-9 col-lg-9" style="background-color: #5bc0de;">
+                    <center><h2>Search Results</h2></center>
+                    {% for tlist in list_of_tenders %}
+                        <div class="w3-container">
+                            <a href="{{ url_for('closed') }}">
+                                <div class="w3-grey w3-hover-shadow" style="padding: 5%;">
+                                    <div class="row">
+                                        <div class="col-lg-3 col-xs-3 col-md-3 col-lg-3">
+                                            <p><b>Title:</b></p>
+                                        </div>
+                                        <div class="col-md-8 col-sm-8 col-xs-8 col-lg-8">
+                                            {{tlist.title}}
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-3 col-xs-3 col-md-3 col-lg-3">
+                                            <p><b>Organization:</b></p>
+                                        </div>
+                                        <div class="col-md-8 col-sm-8 col-xs-8 col-lg-8">
+                                            {{tlist.org_chain}}
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-3 col-xs-3 col-md-3 col-lg-3">
+                                            <p><b>Opening Date:</b></p>
+                                        </div>
+                                        <div class="col-md-3 col-sm-3 col-xs-3 col-lg-3">
+                                            {{tlist.opening_date}}
+                                        </div>
+                                        <div class="col-lg-3 col-xs-3 col-md-3 col-lg-3">
+                                            <p><b>Closing Date:</b></p>
+                                        </div>
+                                        <div class="col-md-3 col-sm-3 col-xs-3 col-lg-3">
+                                            {{tlist.closing_date}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div> <br>
+                    {% endfor %}
+                </div>
+
+            </div>
+        </div>
+    </section>
+{% endblock %}

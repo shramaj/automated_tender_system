@@ -1,0 +1,25 @@
+.navbar{
+	margin-bottom: 5px;
+	border: 0;
+}
+
+.navbar-default .navbar-brand {
+    color: white;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+    color: white;
+    background-color: black;
+}
+.navbar-default .navbar-nav>li>a {
+    color: white;
+}
+.help{
+	text-align: center;
+    padding-top: 3%;
+}
+.started{
+    padding-top: 3%;
+}
+.login-p{
+    padding-bottom: 22%;
+}

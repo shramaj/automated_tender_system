@@ -1,0 +1,47 @@
+<style>
+
+	.navbar{
+    margin-bottom: 0px;
+    border: 0;
+}
+
+.navbar-default .navbar-brand {
+    color: white;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+    color: white;
+    background-color: black;
+}
+.navbar-default .navbar-nav>li>a {
+    color: white;
+}
+.help{.
+    text-align: center;
+}
+     [ng\:cloak], [ng-cloak], .ng-cloak {
+            display: none;
+        }
+        table{
+            width: 400px;
+            text-align: left;
+            border: 2px solid black;
+            padding: 10px;
+        }
+        input.ng-dirty.ng-invalid{
+            border-color: red;
+        }
+        input.ng-touched.ng-invalid{
+            border-color: red;
+        }
+        #frm3
+        {
+        	padding-left: 15px;
+        }
+        #sort
+        {
+        	padding-top: 8px;
+        }
+        
+
+    
+</style>

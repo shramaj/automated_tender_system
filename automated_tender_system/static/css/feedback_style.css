@@ -1,0 +1,64 @@
+        [ng\:cloak], [ng-cloak], .ng-cloak {
+            display: none;
+        }
+        table{
+            width: 400px;
+            text-align: left;
+            border: 2px solid black;
+            padding: 10px;
+        }
+        input.ng-dirty.ng-invalid{
+            border-color: red;
+        }
+        input.ng-touched.ng-invalid{
+            border-color: red;
+        }
+        .navbar{
+            margin-bottom: 0px;
+            border: 0;
+        }
+
+        .navbar-default .navbar-brand {
+            color: white;
+        }
+        .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+            color: white;
+            background-color: black;
+        }
+        .navbar-default .navbar-nav>li>a {
+            color: white;
+        }
+        .help{
+            text-align: center;
+        }
+        form {
+
+            padding-left:50px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            padding-top: 15px;
+            width: 100%;
+
+
+        }
+        body
+        {
+
+            background:#f0f0f0;
+            background-repeat: no-repeat;
+        }
+        label
+        {
+
+            float: left;
+            width: 200px;
+
+        }
+        select,input,textarea
+        {
+            max-width: 550px;
+        }
+        .btn
+        {min-width:200px;
+            min-height: 50px
+        }

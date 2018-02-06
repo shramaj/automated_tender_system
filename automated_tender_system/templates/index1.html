@@ -1,0 +1,141 @@
+{% extends "layout.html" %}
+{% block head %}
+ <link rel="stylesheet" type="text/css" href="../static/css/index_style.css" />
+{% endblock %}
+{% block body %}
+  <section class="first-carousel" style="background-color: black; color: white; padding-bottom: 30px;">
+  <div class="container" style="width: 100%;">
+  <div class="row">
+  <div class="Participating-dept" style="text-align: center; font-size: 20px; font-style: bold;">
+      <p>Participating Departments</p>
+  </div>
+  </div>
+
+  <!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->
+  <div class="row">
+  <div id="wowslider-container1">
+  <div class="ws_images"><ul>
+  <li><a href="ayush.gov.in"><img src="../static/img/indian_ministry.jpg" alt="" title="" id="wows1_0"/></a></li>
+    <li><a href="ayush.gov.in"><img src="../static/img/ayush.jpg" alt="" title="" id="wows1_0"/></a></li>
+    <li><a href="www.civilaviation.gov.in/"><img src="../static/img//civil.jpg" alt="" title="" id="wows1_1"/></a></li>
+    <li><a href="mod.nic.in"><img src="../static/img/defence.jpg" alt="" title="" id="wows1_2"/></a></li>
+  </ul></div>
+  <div class="ws_bullets"><div>
+    <a href="#" title=""><span><img src="../static/img/ayush.jpg" alt=""/>1</span></a>
+    <a href="#" title=""><span><img src="../static/img/civil.jpg" alt=""/>2</span></a>
+    <a href="#" title=""><span><img src="../static/img/defence.jpg" alt=""/>3</span></a>
+  </div>
+  </div>
+  </div>
+  </div>
+
+  <div class="row">
+  <div class="get-started" style="text-align:center;">
+            <a href="#div1" class="glyphicon glyphicon-chevron-down" style="background-color: black; color: white; font-size: 20px;">&nbsp;<b>Get Started</b></a>
+    </div>
+            
+  </div>
+  </div>
+  </section>
+
+  <div class="container-fluid div1" style="padding-top: 40px;">
+  <div class="row">
+  <div class="col-md-3 col-lg-3" style="background-color:;">
+    <div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title help">Help</h3>
+  </div>
+  <div class="panel-body">
+    <ul class="nav nav-pills nav-stacked">
+  <li role="presentation"><a href="about.html">About Portal</a></li>
+    <li role="presentation"><a href="how.html">Help for Dept. Users</a></li>
+    <li role="presentation"><a href="how.html">Help for Online Bidders</a></li>
+    </ul>
+  </div>
+</div>
+  </div>
+    
+  <div class="col-md-6">
+  <p style="text-align: justify;">
+    This portal provides a common platform for all bidders to go through the tenders and apply accordingly. There&rsquo;s a single point access to the procurements made across various central government organisations. All the tenders proposed by various departments are displayed here. Its an application to obtain real time info/track the status of any Government department related tenders by the vendors. It also provides vendors a feedback system, raise their concerns and improve transparency. It combines all the various types of tenders and makes it more easy for bidders to select tenders.
+  </p>
+    </div>
+      
+  <div class="col-md-3" style="text-align: center; margin-top: 0px;">
+  <div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Panel title</h3>
+  </div>
+  <div class="panel-body">
+    <ul class="nav nav-pills nav-stacked">
+  <li role="presentation"><a href="{{url_for('login')}}">Login</a></li>
+    <li role="presentation"><a href="{{url_for('register')}}">Register</a></li>
+    </ul>
+  </div>
+</div>
+  </div>
+    
+  </div>
+  </div>
+
+<div class="container-fluid div1" style="padding-top: 10px;">
+  <div class="row">
+  <div class="col-md-3 col-lg-3" style="background-color:;">
+    <div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title help">Others</h3>
+  </div>
+  <div class="panel-body">
+    <ul class="nav nav-pills nav-stacked">
+  <li role="presentation"><a href="about.html">Rules and Procedures</a></li>
+    <li role="presentation"><a href="how.html">Downloads</a></li>
+    <li role="presentation"><a href="how.html">Dashboard</a></li>
+    </ul>
+  </div>
+</div>
+  </div>
+    
+  <div class="col-md-6">
+  <p style="text-align: justify;">
+  </p>
+    </div>
+      
+  <div class="col-md-3" style="text-align: center; margin-top: 0px;">
+  <div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Related Links</h3>
+  </div>
+  <div class="panel-body">
+    <ul class="nav nav-pills nav-stacked">
+  <li role="presentation"><a href="{{url_for('faq')}}">FAQ</a></li>
+    <li role="presentation"><a href="how.html">Nodal Officers List</a></li>
+    <li role="presentation"><a href="how.html">GOI Directory</a></li>
+    </ul>
+  </div>
+</div>
+  </div>
+    
+  </div>
+  </div>
+
+
+<div class="container-fluid div1" style="padding-top: 10px;">
+  <div class="row">
+  <div class="col-md-3 col-lg-3" style="background-color:;">
+    <div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title help">Search the Tender</h3>
+  </div>
+  <div class="panel-body">
+    <ul class="nav nav-pills nav-stacked">
+  <li role="presentation"><a href="about.html">Tender Search</a></li>
+    <li role="presentation"><a href="how.html">Active Tenders</a></li>
+    <li role="presentation"><a href="how.html">Closed Tenders</a></li>
+    <li role="presentation"><a href="how.html">Tenders Calendar</a></li>
+    </ul>
+  </div>
+</div>
+  </div>        
+  </div>
+  </div>
+  {% endblock %}

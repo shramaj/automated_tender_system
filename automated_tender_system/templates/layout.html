@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Automated Tender System</title>
+
+    <!-- Start WOWSlider.com HEAD section --> <!-- add to the <head> of your page -->
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script type="text/javascript" src="../static/js/jquery.js"></script>
+    {% block head %}{% endblock %}
+    <!-- End WOWSlider.com HEAD section -->
+
+</head>
+<body data-spy="scroll" data-target=".navbar">
+
+<div class="navbar" style="margin-bottom: 0px; padding-bottom: 0px;">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid" style="background-color: steelblue;">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{{url_for('index')}}">Automated Tenders System</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{{url_for('index')}}">Home <span class="sr-only">(current)</span></a></li>
+                    <li><a href="{{url_for('latest')}}">Latest Tenders</a></li>
+                    <li><a href="{{url_for('search')}}">Search</a></li>
+                    <li><a href="#">Result of Tenders</a></li>
+                    <li><a href="{{url_for('contact')}}">Contact Us</a></li>
+                        {% if session.loginid %}
+                            <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{session.loginid}}<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                            <li><a href="{{url_for('profile')}}">View Profile</a></li>
+                            <li><a href="{{url_for('logout')}}">Logout</a></li>
+                            </ul>
+                        {% else: %}
+                            <li><a href="{{url_for('login')}}">Login</a></li>
+                        {% endif %}
+
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+</div>
+{% block body %}{% endblock %}
+
+<footer style="background-color: black; text-align: ">
+    <div class="container" style="text-align: center;">
+        <div class="row">
+
+            <ul class="list-inline ">
+                <li id="social" class="push-right">Keep in touch</li>
+                <li><a  href="#"><img src="../static/img/facebook.png"></a></li>
+                <li><a href="#"><img src="../static/img/Youtube.png"></a></li>
+                <li><a href="#"><img src="../static/img/Twitter.png"></a></li>
+            </ul>
+
+        </div>
+        <div class="row">
+            <div>
+                <p>
+                    &copy; Automated Tenders System 2017. All right reserved.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript" src="../static/js/wowslider.js"></script>
+<script type="text/javascript" src="../static/js/script.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- End WOWSlider.com BODY section -->
+
+</body>
+</html>
