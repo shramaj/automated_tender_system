@@ -31,5 +31,5 @@ Technologies Used:
 Client Side Scripting Language:	HTML, CSS, JavaScript, AngularJS
 Server Side Scripting Language:	Python, Flask
 Database: MongoDB
-Web Scraping: Selenium
+Web Scraping: Selenium 
 Web Parser: BeautifulSoup
