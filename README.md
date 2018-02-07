@@ -14,17 +14,17 @@ An online application designed to obtain real time info/track the status of any 
 6. To improve transparency
 
 Features:
-1. Login 
+1. Login-
    Admin, Nodal Officer and the company vendors have been given the login ids to login each time and track everything.
-2. Registration
+2. Registration-
    New users have to register in order to obtain login information.
-3. Search Tender 
+3. Search Tender-
    Any user can search tenders with ease. There are various filter options provided. They can search the tender by tender type, status, sort by, active, closed, etc. This makes searching more easy and less time consuming.
-4. Admin Functionalities
+4. Admin Functionalities-
    The admin has been given the authority to add user, change settings, update information, delete unnecessary information, retrieve information whenever needed.
-5. Company functionalities
+5. Company functionalities-
    These include search tender, profile settings, tender archives, notifications, etc.
-6. Nodal officer functionalities
+6. Nodal officer functionalities-
    The Nodal officer has been given functionalities like allocate tenders, track progress, generate reports, keep a watch and keep the department updated.
    
 Technologies Used:
