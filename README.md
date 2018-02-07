@@ -19,7 +19,7 @@ Features:
 2. Registration
    New users have to register in order to obtain login information.
 3. Search Tender 
-   Any user can search tenders with ease. There are various filter options provided. They can search the tender by tender type, status, sort by, active, closed, etc. This makes seraching more easy and less time consuming.
+   Any user can search tenders with ease. There are various filter options provided. They can search the tender by tender type, status, sort by, active, closed, etc. This makes searching more easy and less time consuming.
 4. Admin Functionalities
    The admin has been given the authority to add user, change settings, update information, delete unnecessary information, retrieve information whenever needed.
 5. Company functionalities
